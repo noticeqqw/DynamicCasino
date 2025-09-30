@@ -330,7 +330,7 @@ public class CasinoController {
     private void applySettings() {
         try {
             int newColumns = Integer.parseInt(columnsField.getText());
-            int symbolsToUse = 0;
+            int symbolsToUse = 3;
             double spinSpeed = 1.0;
             double simulationSpeed = 3.0;
 
@@ -542,14 +542,11 @@ PauseTransition delay = new PauseTransition(Duration.millis(delayMs));
             delay.play();
         }
 
-        // Планируем остановку и проверку результата
+
         Timeline stopTimeline = new Timeline(new KeyFrame(
             Duration.millis(totalSimulationMs),
             e -> {
-                // Останавливаем логику — новые анимации не запускаются
                 currentState = GameState.IDLE;
-
-                // Начинаем асинхронное ожидание завершения активных анимаций
                 waitForAnimationsToFinish();
             }
         ));

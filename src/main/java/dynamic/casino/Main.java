@@ -15,10 +15,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/casino.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Игровой автомат казино 777");
-        primaryStage.setScene(new Scene(root, 1250, 750));
+        primaryStage.setScene(new Scene(root, 1250, 920));
         primaryStage.show();
     }
-
     public static void main(String[] args) {
         launch(args);
     }
